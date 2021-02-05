@@ -10,5 +10,5 @@ logs.sh
 .gitignore
 .Rbuildignore
 docs/articles/SPR-WF_files/*
-./R
-./man
+R
+man
