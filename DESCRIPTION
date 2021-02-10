@@ -4,13 +4,12 @@ Version: 0.9.0
 Date: 2021-02-05
 Authors@R: c(
     person(given = "Daniela", family = "Cassol", role = c("aut", "cre"), email="danielac@ucr.edu"))
-Description: This package provides a pre-configured workflow and reporting template for SPR-WF analysis.
-biocViews: template
+Description: This package provides a pre-configured directory structure for systemPipeR Workflow packages.
+biocViews: Infrastructure
 Imports: systemPipeR (>= 1.24.0), systemPipeRdata (>= 1.18.0)
 Suggests: BiocStyle, knitr, rmarkdown
 VignetteBuilder: knitr
 SystemRequirements: SPR-WF can be used to run external 
-        command-line software (e.g. short read aligners), but the 
-        corresponding tool needs to be installed on a system.  
+        command-line software, but the corresponding tool needs to be installed on a system.  
 License: Artistic-2.0
 URL: https://github.com/dcassol/SPR-WF
