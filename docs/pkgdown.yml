@@ -3,5 +3,8 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   SPRthis: SPRthis.html
-last_built: 2021-02-11T05:49Z
+last_built: 2021-02-11T07:01Z
+urls:
+  reference: https://www.dcassol.com/SPRthis//reference
+  article: https://www.dcassol.com/SPRthis//articles
 
