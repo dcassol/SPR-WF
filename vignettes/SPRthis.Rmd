@@ -56,7 +56,7 @@ sprthis(wfName="SPRtest", analysis="SPRtest", path=tempdir())
 
 
 ```{r, eval=FALSE}
-usethis::use_pkgdown()
+usethis::use_pkgdown() ## 
 pkgdown::build_site() 
 roxygen2::roxygenise()
 ```
