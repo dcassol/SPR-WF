@@ -44,14 +44,14 @@ sprthis <- function(wfName = "SPRtest", analysis, path = tempdir()) {
   readme <- c(
     paste0("# ", wfName),
     "\n<!-- badges: start -->",
-    "![R-CMD-check](https://github.com/dcassol/SPR-WF/workflows/R-CMD-check/badge.svg)",
+    paste0("![R-CMD-check](https://github.com/systemPipeR/", wfName, "/workflows/R-CMD-check/badge.svg)"),
     "<!-- badges: end -->",
     "\n### Introduction",
     "\n### Installation",
     "```r",
     "if (!requireNamespace(\"BiocManager\", quietly = TRUE)) {",
     "  install.packages(\"BiocManager\") }",
-    paste0("BiocManager::install(\"systemPipeR/\", wfName)"),
+    paste0("BiocManager::install('systemPipeR/", wfName,"')"),
     "```",
     "\n### Usage"
   )
