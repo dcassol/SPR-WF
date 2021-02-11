@@ -40,9 +40,19 @@ knitr::opts_chunk$set(
 
 ```{r setup, echo=FALSE, message=FALSE, wwarning=FALSE, eval=FALSE}
 suppressPackageStartupMessages({
+  library(SPRthis)
 
 })
 ```
+
+#
+
+```{r, eval=FALSE}
+usethis::use_pkgdown()
+pkgdown::build_site() 
+roxygen2::roxygenise()
+```
+
 
 # Version Information
 

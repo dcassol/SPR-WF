@@ -6,10 +6,11 @@ Authors@R: c(
     person(given = "Daniela", family = "Cassol", role = c("aut", "cre"), email="danielac@ucr.edu"))
 Description: This package expends biocthis and usethis packages, providing automation to create systemPipeR workflows templates.
 biocViews: Infrastructure
-Imports: systemPipeR (>= 1.24.0), systemPipeRdata (>= 1.18.0)
+Imports: yaml, usethis
 Suggests: BiocStyle, knitr, rmarkdown
 VignetteBuilder: knitr
 SystemRequirements: SPRthis can be used to run external 
         command-line software, but the corresponding tool needs to be installed on a system.  
 License: Artistic-2.0
 URL: https://github.com/dcassol/SPRthis
+RoxygenNote: 7.1.1
