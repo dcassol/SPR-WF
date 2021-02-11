@@ -1,5 +1,5 @@
 Package: SPRthis
-Title: Automate package and project setup for systemPipeR Workflow packages.
+Title: Automate package and project setup for systemPipeR Workflow packages
 Version: 0.9.0
 Date: 2021-02-05
 Authors@R: c(
