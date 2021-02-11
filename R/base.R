@@ -55,7 +55,9 @@ sprthis <- function(wfName="SPR-WF", analysis, path=tempdir()){
   file.copy(system.file("extdata", "SPRthis.Rmd", package="SPRthis", mustWork=TRUE), file.path(path, "vignette"), recursive=TRUE)
   file.copy(system.file("extdata", "bibtex.bib", package="SPRthis", mustWork=TRUE), file.path(path, "vignette"), recursive=TRUE)
   ## Github Actions
-  
+  dir.create(paste0(path, "/.github/workflow/"), recursive = TRUE)
+  file.copy(system.file("github", "R_CMD.yml", package="SPRthis", mustWork=TRUE), 
+            paste0(path, "/.github/workflow/R_CMD.yml"))
 }
 ## Usage:
 # wfName="SPRtest"
