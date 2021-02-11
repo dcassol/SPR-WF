@@ -2,7 +2,7 @@
 % Please edit documentation in R/base.R
 \name{sprthis}
 \alias{sprthis}
-\title{Title Create SPR Workflow package template}
+\title{Create SPR Workflow package template}
 \usage{
 sprthis(wfName = "SPRtest", analysis, path = tempdir())
 }
@@ -17,8 +17,8 @@ sprthis(wfName = "SPRtest", analysis, path = tempdir())
 Path to the newly created package.
 }
 \description{
-Title Create SPR Workflow package template
+Create SPR Workflow package template
 }
 \examples{
-sprthis(wfName="SPRtest", analysis="SPRtest", path=tempdir())
+sprthis(wfName = "SPRtest", analysis = "SPRtest", path = tempdir())
 }

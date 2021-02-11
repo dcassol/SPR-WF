@@ -10,4 +10,4 @@ logs.sh
 .gitignore
 .Rbuildignore
 docs/articles/SPRthis_files/*
-docs
+
