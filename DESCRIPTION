@@ -1,15 +1,15 @@
-Package: SPR-WF
-Title: SPR-WF
+Package: SPRthis
+Title: Automate package and project setup for systemPipeR Workflow packages.
 Version: 0.9.0
 Date: 2021-02-05
 Authors@R: c(
     person(given = "Daniela", family = "Cassol", role = c("aut", "cre"), email="danielac@ucr.edu"))
-Description: This package provides a pre-configured directory structure for systemPipeR Workflow packages.
+Description: This package expends biocthis and usethis packages, providing automation to create systemPipeR workflows templates.
 biocViews: Infrastructure
 Imports: systemPipeR (>= 1.24.0), systemPipeRdata (>= 1.18.0)
 Suggests: BiocStyle, knitr, rmarkdown
 VignetteBuilder: knitr
-SystemRequirements: SPR-WF can be used to run external 
+SystemRequirements: SPRthis can be used to run external 
         command-line software, but the corresponding tool needs to be installed on a system.  
 License: Artistic-2.0
-URL: https://github.com/dcassol/SPR-WF
+URL: https://github.com/dcassol/SPRthis
