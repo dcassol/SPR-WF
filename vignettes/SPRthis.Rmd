@@ -76,6 +76,14 @@ pkgdown::build_site()
 roxygen2::roxygenise()
 ```
 
+## Testing the code with `testthat`
+
+To create the infrastructure you need, run once:
+
+```{r, eval=FALSE}
+usethis::use_test("sprthis")
+```
+
 # Version Information
 
 ```{r sessionInfo}

@@ -58,6 +58,7 @@ sprthis <- function(wfName="SPRtest", analysis, path=tempdir()){
   dir.create(paste0(path, "/.github/workflow/"), recursive = TRUE)
   file.copy(system.file("github", "R_CMD.yml", package="SPRthis", mustWork=TRUE), 
             paste0(path, "/.github/workflow/R_CMD.yml"))
+  return(path)
 }
 ## Usage:
 # wfName="SPRtest"
