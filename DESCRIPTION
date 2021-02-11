@@ -10,7 +10,8 @@ Imports: yaml, usethis
 Suggests: BiocStyle, knitr, rmarkdown
 VignetteBuilder: knitr
 SystemRequirements: SPRthis can be used to run external 
-        command-line software, but the corresponding tool needs to be installed on a system.  
+        command-line software, but the corresponding tool needs to be installed on a system.
+Encoding: UTF-8
 License: Artistic-2.0
 URL: https://github.com/dcassol/SPRthis
 RoxygenNote: 7.1.1

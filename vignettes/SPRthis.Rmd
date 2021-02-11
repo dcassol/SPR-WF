@@ -54,13 +54,27 @@ library(SPRthis)
 sprthis(wfName="SPRtest", analysis="SPRtest", path=tempdir())
 ```
 
+# Help functions to create the package
+
+## Create the webiste for the package
+
+Run *once* to configure the package to use `pkgdown`
 
 ```{r, eval=FALSE}
-usethis::use_pkgdown() ## 
-pkgdown::build_site() 
-roxygen2::roxygenise()
+usethis::use_pkgdown() ## it will create _pkgdown.yml
 ```
 
+Edit the `_pkgdown.yml` file and run:
+
+```{r, eval=FALSE}
+pkgdown::build_site() 
+```
+
+## Documentation with `roxygen2`
+
+```{r, eval=FALSE}
+roxygen2::roxygenise()
+```
 
 # Version Information
 

@@ -11,17 +11,8 @@ home:
     href: https://github.com/dcassol/SPRthis/issues
 template:
   params:
-    docsearch:
-       bootswatch: flatly
     ganalytics: G-CCMXLYXWYV
-navbar:
-  title: "SPRthis"
-  left:
-    - icon: fas fa-home fa-lg
-      href: index.html
-    - text: "Workflow"
-      href: articles/SPRthis.html
-      icon: fas fa-book
-  right:
-    - icon: fa-github fa-lg
-      href: https://github.com/dcassol/SPRthis
+    bootswatch: flatly
+#    docsearch:
+#      api_key: API_KEY
+#      index_name: INDEX_NAME
