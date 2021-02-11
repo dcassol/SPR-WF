@@ -11,7 +11,7 @@
 #' yaml
 #' @examples
 #' sprthis(wfName="SPRtest", analysis="BLAST", path=tempdir())
-sprthis <- function(wfName="SPR-WF", analysis, path=tempdir()){
+sprthis <- function(wfName="SPRtest", analysis, path=tempdir()){
     ## Create package
   fields <- list(Package=wfName, Title=wfName, Version="0.9.0",
                  Description=paste0("This package provides a pre-configured workflow and reporting template for ", analysis, "."),

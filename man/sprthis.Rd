@@ -4,7 +4,7 @@
 \alias{sprthis}
 \title{Title Create SPR Workflow package template}
 \usage{
-sprthis(wfName = "SPR-WF", analysis, path = tempdir())
+sprthis(wfName = "SPRtest", analysis, path = tempdir())
 }
 \arguments{
 \item{wfName}{character vector with the new SPR Workflow package name.}

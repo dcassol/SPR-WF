@@ -45,7 +45,7 @@ suppressPackageStartupMessages({
 })
 ```
 
-#
+# Quick start to using to `SPRthis`
 
 ```{r, eval=FALSE}
 usethis::use_pkgdown()
