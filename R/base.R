@@ -13,7 +13,7 @@
 #' sprthis(wfName="SPR-test", analysis="BLAST", path=tempdir())
 sprthis <- function(wfName="SPR-WF", analysis, path=tempdir()){
   path <- normalizePath(path)
-## Create package
+  ## Create package
   fields <- list(Package=wfName, Title=wfName, Version="0.9.0",
                  Description=paste0("This package provides a pre-configured workflow and reporting template for ", analysis, "."),
                  biocViews="Infrastructure, ...", Imports="systemPipeR (>= 1.25.0)",
@@ -32,7 +32,7 @@ sprthis <- function(wfName="SPR-WF", analysis, path=tempdir()){
   # directory structure
   skeleton <- file.path(path_temp, "skeleton")
   dir.create(skeleton)
-  file.copy(system.file("extdata/", "", package="SPRthis", mustWork=TRUE), skeleton, recursive=TRUE)
+  file.copy(system.file("extdata", "", package="SPRthis", mustWork=TRUE), skeleton, recursive=TRUE)
   file.rename(file.path(skeleton, "SPRthis.Rmd"), file.path(skeleton, "skeleton.Rmd"))
   ## README
   readme <- c(paste0("# ", wfName),
@@ -47,13 +47,13 @@ sprthis <- function(wfName="SPR-WF", analysis, path=tempdir()){
               paste0("BiocManager::install(\"systemPipeR/\", wfName)"),
               "```",
               "\n### Usage"
-    
+              
   )
   writeLines(readme, con=file.path(path, "README.md"))
   ##Vignette
   dir.create(file.path(path, "vignette"))
-  file.copy(system.file("extdata/", "SPRthis.Rmd", package="SPRthis", mustWork=TRUE), file.path(path, "vignette"), recursive=TRUE)
-  file.copy(system.file("extdata/", "bibtex.bib", package="SPRthis", mustWork=TRUE), file.path(path, "vignette"), recursive=TRUE)
+  file.copy(system.file("extdata", "SPRthis.Rmd", package="SPRthis", mustWork=TRUE), file.path(path, "vignette"), recursive=TRUE)
+  file.copy(system.file("extdata", "bibtex.bib", package="SPRthis", mustWork=TRUE), file.path(path, "vignette"), recursive=TRUE)
   ## Github Actions
   
 }
