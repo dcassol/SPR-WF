@@ -10,10 +10,9 @@
 #' usethis
 #' yaml
 #' @examples
-#' sprthis(wfName="SPR-test", analysis="BLAST", path=tempdir())
+#' sprthis(wfName="SPRtest", analysis="BLAST", path=tempdir())
 sprthis <- function(wfName="SPR-WF", analysis, path=tempdir()){
-  path <- normalizePath(path)
-  ## Create package
+    ## Create package
   fields <- list(Package=wfName, Title=wfName, Version="0.9.0",
                  Description=paste0("This package provides a pre-configured workflow and reporting template for ", analysis, "."),
                  biocViews="Infrastructure, ...", Imports="systemPipeR (>= 1.25.0)",
@@ -23,6 +22,7 @@ sprthis <- function(wfName="SPR-WF", analysis, path=tempdir()){
                  License="Artistic-2.0",
                  URL=paste0("https://github.com/systemPipeR/", wfName))
   usethis::create_package(fields = fields, path=path)
+  path <- normalizePath(path)
   ## skeleton
   path_temp <- file.path(path, "inst/rmarkdown/templates", wfName)
   dir.create(path_temp, recursive = TRUE)
@@ -30,10 +30,10 @@ sprthis <- function(wfName="SPR-WF", analysis, path=tempdir()){
   template <- list(name=wfName, description=wfName, create_dir=TRUE)
   yaml::write_yaml(x = template, file=file.path(path_temp, "template.yml"))
   # directory structure
-  skeleton <- file.path(path_temp, "skeleton")
-  dir.create(skeleton)
-  file.copy(system.file("extdata", "", package="SPRthis", mustWork=TRUE), skeleton, recursive=TRUE)
-  file.rename(file.path(skeleton, "SPRthis.Rmd"), file.path(skeleton, "skeleton.Rmd"))
+  file.copy(system.file("extdata", "", package="SPRthis", mustWork=TRUE), path_temp, recursive=TRUE)
+  file.rename(paste0(path_temp, "/extdata"), paste0(path_temp, "/skeleton"))
+  file.rename(paste0(path_temp, "/skeleton/SPRthis.Rmd"), 
+              paste0(path_temp, "/skeleton/skeleton.Rmd"))
   ## README
   readme <- c(paste0("# ", wfName),
               "\n<!-- badges: start -->",
@@ -57,3 +57,7 @@ sprthis <- function(wfName="SPR-WF", analysis, path=tempdir()){
   ## Github Actions
   
 }
+## Usage:
+# wfName="SPRtest"
+# analysis="BLAST"
+# path=paste0(tempdir(), "/SPRtest")
