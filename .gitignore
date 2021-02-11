@@ -9,6 +9,6 @@ vignettes/*.html
 logs.sh
 .gitignore
 .Rbuildignore
-docs/articles/SPR-WF_files/*
-R
-man
+docs/articles/SPRthis_files/*
+R/spr_wf.R
+
