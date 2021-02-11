@@ -63,10 +63,10 @@ sprthis <- function(wfName = "SPRtest", analysis, path = tempdir()) {
   file.rename(file.path(vig_path, "SPRthis.Rmd"), file.path(paste0(vig_path, "/", wfName, ".Rmd")))
   file.copy(system.file("extdata", "bibtex.bib", package = "SPRthis", mustWork = TRUE), vig_path, recursive = TRUE)
   ## Github Actions
-  dir.create(paste0(path, "/.github/workflow/"), recursive = TRUE)
+  dir.create(paste0(path, "/.github/workflows/"), recursive = TRUE)
   file.copy(
     system.file("github", "R_CMD.yml", package = "SPRthis", mustWork = TRUE),
-    paste0(path, "/.github/workflow/R_CMD.yml")
+    paste0(path, "/.github/workflows/R_CMD.yml")
   )
   return(path)
 }
