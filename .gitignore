@@ -10,6 +10,3 @@ logs.sh
 .gitignore
 .Rbuildignore
 docs/articles/SPRthis_files/*
-R/spr_wf.R
-
-docs
