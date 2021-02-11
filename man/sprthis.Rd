@@ -20,5 +20,5 @@ Path to the newly created package.
 Title Create SPR Workflow package template
 }
 \examples{
-sprthis(wfName="SPRtest", analysis="BLAST", path=tempdir())
+sprthis(wfName="SPRtest", analysis="SPRtest", path=tempdir())
 }

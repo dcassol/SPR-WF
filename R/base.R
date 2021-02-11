@@ -10,7 +10,7 @@
 #' usethis
 #' yaml
 #' @examples
-#' sprthis(wfName="SPRtest", analysis="BLAST", path=tempdir())
+#' sprthis(wfName="SPRtest", analysis="SPRtest", path=tempdir())
 sprthis <- function(wfName="SPRtest", analysis, path=tempdir()){
     ## Create package
   fields <- list(Package=wfName, Title=wfName, Version="0.9.0",

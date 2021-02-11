@@ -47,6 +47,14 @@ suppressPackageStartupMessages({
 
 # Quick start to using to `SPRthis`
 
+```{r}
+## Load the package
+library(SPRthis)
+## create Package
+sprthis(wfName="SPRtest", analysis="SPRtest", path=tempdir())
+```
+
+
 ```{r, eval=FALSE}
 usethis::use_pkgdown()
 pkgdown::build_site() 
