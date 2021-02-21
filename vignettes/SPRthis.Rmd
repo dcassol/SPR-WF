@@ -54,6 +54,37 @@ library(SPRthis)
 sprthis(wfName="SPRtest", analysis="SPRtest", path=tempdir())
 ```
 
+<pre>
+SPRtest/  
+├── DESCRIPTION 
+├── NAMESPACE 
+├── README.md 
+├── SPRtest.Rproj 
+├── .gitignore
+├── .Rbuildignore
+├── .Rproj.user/  
+├── R/
+├── vignettes 
+│   ├── bibtex.bib
+│   ├── SPRtest.Rmd  
+└── inst 
+    ├── rmarkdown 
+    │   └── templates
+    │       └── SPRtest
+    │           └── SPRtest
+    │               └── skeleton
+    │                   ├── template.yml
+    │                   ├── batchtools.slurm.tmpl                  
+    │                   ├── bibtex.bib 
+    │                   ├── NEWS
+    │                   ├── SPRconfig.yml
+    │                   ├── SPRthis.Rmd 
+    │                   ├── targetsPE.txt 
+    │                   ├── data/
+    │                   ├── param/
+    │                   └── results/
+</pre>
+
 # Help functions to create the package
 
 ## Create the webiste for the package

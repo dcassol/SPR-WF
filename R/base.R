@@ -56,8 +56,8 @@ sprthis <- function(wfName = "SPRtest", analysis, path = tempdir()) {
     "\n### Usage"
   )
   writeLines(readme, con = file.path(path, "README.md"))
-  ## Vignette
-  vig_path <- file.path(path, "vignette")
+  ## Vignettes
+  vig_path <- file.path(path, "vignettes")
   dir.create(vig_path)
   file.copy(system.file("extdata", "SPRthis.Rmd", package = "SPRthis", mustWork = TRUE), vig_path, recursive = TRUE)
   file.rename(file.path(vig_path, "SPRthis.Rmd"), file.path(paste0(vig_path, "/", wfName, ".Rmd")))
@@ -86,7 +86,7 @@ sprthis <- function(wfName = "SPRtest", analysis, path = tempdir()) {
 #' @export skeleton_update
 #' @examples
 #' sprthis(wfName = "SPRtest", analysis = "SPRtest", path = tempdir())
-#' path <- file.path(tempdir(), "vignette/SPRtest.Rmd")
+#' path <- file.path(tempdir(), "vignettes/SPRtest.Rmd")
 #' skeleton_update(path)
 skeleton_update <- function(rmd) {
   path <- normalizePath(rmd)

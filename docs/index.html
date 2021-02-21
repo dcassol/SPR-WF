@@ -37,7 +37,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">SPRthis</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.0</span>
       </span>
     </div>
 
@@ -137,6 +137,37 @@
 <span class="co"># ✓ Opening '/tmp/Rtmpui2LJa/' in new RStudio session</span>
 <span class="co"># ✓ Setting active project to '/SPRthis'</span>
 <span class="co"># [1] TRUE</span></code></pre></div>
+<pre><code>&lt;pre&gt;
+SPS_xx/  
+├── server.R               &lt;span class="text-success"&gt;|&lt;/span&gt; 
+├── global.R               &lt;span class="text-success"&gt;| Most important server, UI and global files, unless special needs, `global.R` is the only file you need to edit manually&lt;/span&gt;   
+├── ui.R                   &lt;span class="text-success"&gt;|&lt;/span&gt;  
+├── deploy.R               &lt;span class="text-info"&gt;| Deploy helper file&lt;/span&gt;  
+├── config                 &lt;span class="text-success"&gt;| Important app config files. Do not edit them if you don't know&lt;/span&gt;  
+│   ├── sps.db             &lt;span class="text-gray"&gt;| SPS database&lt;/span&gt; 
+│   ├── sps_options.yaml   &lt;span class="text-gray"&gt;| SPS default option list&lt;/span&gt; 
+│   └── tabs.csv           &lt;span class="text-gray"&gt;| SPS tab information&lt;/span&gt; 
+├── data                   &lt;span class="text-primary"&gt;| App example data files&lt;/span&gt; 
+│   ├── xx.csv             
+├── R                      &lt;span class="text-primary"&gt;| All SPS additional tab files and helper R function files&lt;/span&gt; 
+│   ├── tab_xx.R            
+├── README.md              
+├── results                &lt;span class="text-gray"&gt;| Not in use for this current version, you can store some data been generated from the app&lt;/span&gt; 
+│   └── README.md          
+└── www                    &lt;span class="text-primary"&gt;| Internet resources&lt;/span&gt;  
+    ├── about              &lt;span class="text-gray"&gt;| About tab information&lt;/span&gt; 
+    │   └── xx.md          
+    ├── css                &lt;span class="text-info"&gt;| CSS files&lt;/span&gt;  
+    │   └── sps.css         
+    ├── img                &lt;span class="text-info"&gt;| App image resources&lt;/span&gt;    
+    │   └── xx.png         
+    ├── js                 &lt;span class="text-info"&gt;| Javascripts&lt;/span&gt;
+    │   └── xx.js           
+    ├── loading_themes     &lt;span class="text-info"&gt;| Loading screen files&lt;/span&gt; 
+    │   └── xx.html         
+    └── plot_list          &lt;span class="text-info"&gt;| Image files for plot gallery&lt;/span&gt;  
+        └── plot_xx.jpg      
+&lt;/pre&gt;</code></pre>
 </div>
 </div>
 </div>

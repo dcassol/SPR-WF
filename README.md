@@ -64,3 +64,37 @@ sprthis(wfName="SPRtest", analysis="SPRtest", path=tempdir())
 # ✓ Setting active project to '/SPRthis'
 # [1] TRUE
 ```
+
+```
+<pre>
+SPS_xx/  
+├── server.R               <span class="text-success">|</span> 
+├── global.R               <span class="text-success">| Most important server, UI and global files, unless special needs, `global.R` is the only file you need to edit manually</span>   
+├── ui.R                   <span class="text-success">|</span>  
+├── deploy.R               <span class="text-info">| Deploy helper file</span>  
+├── config                 <span class="text-success">| Important app config files. Do not edit them if you don't know</span>  
+│   ├── sps.db             <span class="text-gray">| SPS database</span> 
+│   ├── sps_options.yaml   <span class="text-gray">| SPS default option list</span> 
+│   └── tabs.csv           <span class="text-gray">| SPS tab information</span> 
+├── data                   <span class="text-primary">| App example data files</span> 
+│   ├── xx.csv             
+├── R                      <span class="text-primary">| All SPS additional tab files and helper R function files</span> 
+│   ├── tab_xx.R            
+├── README.md              
+├── results                <span class="text-gray">| Not in use for this current version, you can store some data been generated from the app</span> 
+│   └── README.md          
+└── www                    <span class="text-primary">| Internet resources</span>  
+    ├── about              <span class="text-gray">| About tab information</span> 
+    │   └── xx.md          
+    ├── css                <span class="text-info">| CSS files</span>  
+    │   └── sps.css         
+    ├── img                <span class="text-info">| App image resources</span>    
+    │   └── xx.png         
+    ├── js                 <span class="text-info">| Javascripts</span>
+    │   └── xx.js           
+    ├── loading_themes     <span class="text-info">| Loading screen files</span> 
+    │   └── xx.html         
+    └── plot_list          <span class="text-info">| Image files for plot gallery</span>  
+        └── plot_xx.jpg      
+</pre>
+```
