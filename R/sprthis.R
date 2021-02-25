@@ -9,10 +9,10 @@
 #'
 #' @return Path to the newly created package.
 #' @export sprthis
-#' @examples
-#' sprthis(wfName = "SPRtest", analysis = "SPRtest", path = tempdir())
 #' @importFrom usethis create_package
 #' @importFrom yaml write_yaml
+#' @examples
+#' sprthis(wfName = "SPRtest", analysis = "SPRtest", path = tempdir())
 sprthis <- function(wfName = "SPRtest", analysis, path = tempdir()) {
   ## Create package
   fields <- list(
@@ -25,8 +25,17 @@ sprthis <- function(wfName = "SPRtest", analysis, path = tempdir()) {
     License = "Artistic-2.0",
     URL = paste0("https://github.com/systemPipeR/", wfName)
   )
+  path <- file.path(path, wfName)
   usethis::create_package(fields = fields, path = path)
-  path <- normalizePath(path)
+  ## git_ignore
+  writeLines(c(
+    ".Rproj.user",
+    ".Rhistory",
+    ".Rdata",
+    ".httr-oauth",
+    ".DS_Store", 
+    "vignettes/*_cache/*",
+    "vignettes/*.html"), con = file.path(path, ".gitignore"))
   ## skeleton
   path_temp <- file.path(path, "inst/rmarkdown/templates", wfName)
   dir.create(path_temp, recursive = TRUE)
@@ -70,10 +79,11 @@ sprthis <- function(wfName = "SPRtest", analysis, path = tempdir()) {
   )
   return(path)
 }
-## Usage:
+# Usage:
+# sprthis(wfName = "SPRtest3", analysis = "SPRtest3", path = getwd())
 # wfName="SPRtest"
 # analysis="BLAST"
-# path=paste0(tempdir(), "/SPRtest")
+# path=getwd()
 
 ######################
 ## update function ##
