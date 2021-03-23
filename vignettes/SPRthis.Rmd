@@ -41,7 +41,6 @@ knitr::opts_chunk$set(
 ```{r setup, echo=FALSE, message=FALSE, wwarning=FALSE, eval=FALSE}
 suppressPackageStartupMessages({
   library(SPRthis)
-
 })
 ```
 
@@ -64,6 +63,7 @@ SPRtest/
 ├── .Rbuildignore
 ├── .Rproj.user/  
 ├── R/
+│   ├── functions.R
 ├── vignettes 
 │   ├── bibtex.bib
 │   ├── SPRtest.Rmd  
@@ -71,23 +71,23 @@ SPRtest/
     ├── rmarkdown 
     │   └── templates
     │       └── SPRtest
-    │           └── SPRtest
-    │               └── skeleton
-    │                   ├── template.yml
-    │                   ├── batchtools.slurm.tmpl                  
-    │                   ├── bibtex.bib 
-    │                   ├── NEWS
-    │                   ├── SPRconfig.yml
-    │                   ├── SPRthis.Rmd 
-    │                   ├── targetsPE.txt 
-    │                   ├── data/
-    │                   ├── param/
-    │                   └── results/
+    │           ├── template.yml
+    │           └── skeleton
+    │                 ├── batchtools.slurm.tmpl
+    │                 ├── .batchtools.conf.R
+    │                 ├── bibtex.bib 
+    │                 ├── NEWS
+    │                 ├── SPRconfig.yml
+    │                 ├── skeleton.Rmd 
+    │                 ├── targetsPE.txt 
+    │                 ├── data/
+    │                 ├── param/
+    │                 └── results/
 </pre>
 
 # Help functions to create the package
 
-## Create the webiste for the package
+## Create the webiste for the package with `pkgdown`
 
 Run *once* to configure the package to use `pkgdown`
 
@@ -114,6 +114,13 @@ To create the infrastructure you need, run once:
 ```{r, eval=FALSE}
 usethis::use_test("sprthis")
 ```
+
+To test the code, you can run
+
+```{r, eval=FALSE}
+devtools::test()
+```
+
 
 # Version Information
 

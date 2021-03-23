@@ -2,21 +2,23 @@
 % Please edit documentation in R/sprthis.R
 \name{skeleton_update}
 \alias{skeleton_update}
-\title{Copying vignette Rmd as R Markdown document template}
+\title{Copying vignette `.Rmd` as R Markdown document template}
 \usage{
-skeleton_update(rmd)
+skeleton_update(rmd, templateName = NULL)
 }
 \arguments{
 \item{rmd}{vignette *.Rmd path. Usually: "vignettes/<filename>.Rmd"}
+
+\item{templateName}{template folder name. If `null`, it will add the *.Rmd file name.}
 }
 \value{
 Path to the newly created/update Rmarkdown template.
 }
 \description{
-Copying vignette Rmd as R Markdown document template
+Copying vignette `.Rmd` as R Markdown document template
 }
 \examples{
 sprthis(wfName = "SPRtest", analysis = "SPRtest", path = tempdir())
-path <- file.path(tempdir(), "vignettes/SPRtest.Rmd")
+path <- file.path(tempdir(), "SPRtest", "vignettes/SPRtest.Rmd")
 skeleton_update(path)
 }

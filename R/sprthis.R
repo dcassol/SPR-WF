@@ -6,14 +6,18 @@
 #' @param wfName character vector with the new SPR Workflow package name.
 #' @param analysis character vector withe the analysis name.
 #' @param path A path. If it exists, it is used. If it does not exist, it will be used the temporary path..
-#'
+#' @param baseurl baseurl for the package
+#' 
 #' @return Path to the newly created package.
+#' 
 #' @export sprthis
+#' @importFrom BiocManager install
 #' @importFrom usethis create_package
 #' @importFrom yaml write_yaml
+#' 
 #' @examples
 #' sprthis(wfName = "SPRtest", analysis = "SPRtest", path = tempdir())
-sprthis <- function(wfName = "SPRtest", analysis, path = tempdir()) {
+sprthis <- function(wfName = "SPRtest", analysis, path = tempdir(), baseurl="<baseurl>") {
   ## Create package
   fields <- list(
     Package = wfName, Title = wfName, Version = "0.9.0",
@@ -26,7 +30,7 @@ sprthis <- function(wfName = "SPRtest", analysis, path = tempdir()) {
     URL = paste0("https://github.com/systemPipeR/", wfName)
   )
   path <- file.path(path, wfName)
-  usethis::create_package(fields = fields, path = path)
+  usethis::create_package(fields = fields, path = path, open = FALSE )
   ## git_ignore
   writeLines(c(
     ".Rproj.user",
@@ -36,6 +40,9 @@ sprthis <- function(wfName = "SPRtest", analysis, path = tempdir()) {
     ".DS_Store", 
     "vignettes/*_cache/*",
     "vignettes/*.html"), con = file.path(path, ".gitignore"))
+  ## R folder not empty
+  writeLines(c(
+    "Write functions here"), con = file.path(path, "R/dummyfunction.R"))
   ## skeleton
   path_temp <- file.path(path, "inst/rmarkdown/templates", wfName)
   dir.create(path_temp, recursive = TRUE)
@@ -77,32 +84,57 @@ sprthis <- function(wfName = "SPRtest", analysis, path = tempdir()) {
     system.file("github", "R_CMD.yml", package = "SPRthis", mustWork = TRUE),
     paste0(path, "/.github/workflows/R_CMD.yml")
   )
+  ## WebPage
+  pkgdown <- c(
+  paste0("title: ", wfName),
+  paste0("url: ", baseurl, "/", wfName),
+  "authors:",
+  "  <author name>:", 
+  paste0("    href: ", baseurl),
+  "home:", 
+  "  links:",
+  "  - text: Download from Github",
+  paste0("    href: https://github.com/", "<username>/", wfName), 
+  "  - text: Report a bug",
+  paste0("    href: https://github.com/", "<username>/", wfName, "/issues"), 
+  "template:", 
+  "  params:", 
+  "    ganalytics: XXXXXXX", 
+  "    bootswatch: flatly")
+writeLines(pkgdown, con = file.path(path, "_pkgdown.yml"))
   return(path)
 }
-# Usage:
+## Usage:
 # sprthis(wfName = "SPRtest3", analysis = "SPRtest3", path = getwd())
 # wfName="SPRtest"
 # analysis="BLAST"
 # path=getwd()
 
-######################
-## update function ##
-######################
-#' Copying vignette Rmd as R Markdown document template
+#########################
+## update Rmd file  ##
+#########################
+#' Copying vignette `.Rmd` as R Markdown document template
 #'
 #' @param rmd vignette *.Rmd path. Usually: "vignettes/<filename>.Rmd"
+#' @param templateName template folder name. If `null`, it will add the *.Rmd file name.
 #'
 #' @return Path to the newly created/update Rmarkdown template.
+#' 
 #' @export skeleton_update
+#' @importFrom crayon blue
+#' 
 #' @examples
-#' sprthis(wfName = "SPRtest", analysis = "SPRtest", path = tempdir())
-#' path <- file.path(tempdir(), "vignettes/SPRtest.Rmd")
+#' path <- file.path(tempdir(), "SPRtest", "vignettes/SPRtest.Rmd")
 #' skeleton_update(path)
-skeleton_update <- function(rmd) {
+skeleton_update <- function(rmd, templateName = NULL) {
   path <- normalizePath(rmd)
   dir <- sub("/([^/]*)$", "", sub("/([^/]*)$", "", rmd))
-  to <- paste0(dir, "/inst/rmarkdown/templates/",
-               dir(paste0(dir, "/inst/rmarkdown/templates/")), "/skeleton")
+  if (is.null(templateName)) {
+    templateName <- systemPipeR:::.getFileName(rmd)
+  } else {
+    templateName <- templateName
+  }
+  to <- file.path(paste0(dir, "/inst/rmarkdown/templates/", templateName, "/skeleton"))
   if (!dir.exists(to)) stop("R Markdown document infrastructure doesn't exist.")
   newRmd <- file.path(to, "skeleton.Rmd")
   if (file.exists(newRmd)) {
@@ -110,7 +142,9 @@ skeleton_update <- function(rmd) {
   }
   file.copy(path, to)
   file.rename(file.path(to, basename(rmd)), newRmd)
+  cat(crayon::blue(paste(newRmd, "added/updated successfully")), "\n")
   return(newRmd)
 }
 ## Usage:
-# rmd <- "vignettes/systemPipeBLAST.Rmd"
+# rmd <- "vignettes/SPvarseq.Rmd"
+# skeleton_update(rmd)

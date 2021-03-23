@@ -4,7 +4,7 @@
 \alias{sprthis}
 \title{Create SPR Workflow package template}
 \usage{
-sprthis(wfName = "SPRtest", analysis, path = tempdir())
+sprthis(wfName = "SPRtest", analysis, path = tempdir(), baseurl = "<baseurl>")
 }
 \arguments{
 \item{wfName}{character vector with the new SPR Workflow package name.}
@@ -12,6 +12,8 @@ sprthis(wfName = "SPRtest", analysis, path = tempdir())
 \item{analysis}{character vector withe the analysis name.}
 
 \item{path}{A path. If it exists, it is used. If it does not exist, it will be used the temporary path..}
+
+\item{baseurl}{baseurl for the package}
 }
 \value{
 Path to the newly created package.

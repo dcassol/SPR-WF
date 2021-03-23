@@ -1,4 +1,6 @@
-test_that("check output", {
-  pkg <- sprthis(wfName="SPRtest", analysis="SPRtest", path=tempdir())
-  expect_type(pkg, "character")
+testPath <- sprthis(wfName = "SPRtest", analysis = "SPRtest", path = tempdir())
+test_that("testing outputs", {
+  expect_type(class(testPath), "character")
 })
+
+

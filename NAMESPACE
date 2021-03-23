@@ -2,5 +2,7 @@
 
 export(skeleton_update)
 export(sprthis)
+importFrom(BiocManager,install)
+importFrom(crayon,blue)
 importFrom(usethis,create_package)
 importFrom(yaml,write_yaml)
