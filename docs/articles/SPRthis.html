@@ -37,7 +37,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">SPRthis</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.1</span>
       </span>
     </div>
 
@@ -119,10 +119,10 @@ document.addEventListener("DOMContentLoaded", function() {
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/dcassol/SPRthis">SPRthis</a></span><span class="op">)</span>
 <span class="co">## create Package</span>
 <span class="fu"><a href="../reference/sprthis.html">sprthis</a></span><span class="op">(</span>wfName <span class="op">=</span> <span class="st">"SPRtest"</span>, analysis <span class="op">=</span> <span class="st">"SPRtest"</span>, path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>## ✓ Creating '/tmp/Rtmp8EfrIS/SPRtest/'</code></pre>
-<pre><code>## ✓ Setting active project to '/tmp/Rtmp8EfrIS/SPRtest'</code></pre>
-<pre><code>## ✓ Creating 'R/'</code></pre>
-<pre><code>## ✓ Writing 'DESCRIPTION'</code></pre>
+<pre><code>## ✔ Creating '/tmp/Rtmp29LocL/SPRtest/'</code></pre>
+<pre><code>## ✔ Setting active project to '/tmp/Rtmp29LocL/SPRtest'</code></pre>
+<pre><code>## ✔ Creating 'R/'</code></pre>
+<pre><code>## ✔ Writing 'DESCRIPTION'</code></pre>
 <pre><code>## Package: SPRtest
 ## Title: SPRtest
 ## Version: 0.9.0
@@ -148,9 +148,16 @@ document.addEventListener("DOMContentLoaded", function() {
 ## SystemRequirements: SPRtest can be used to run external command-line
 ##     software, but the corresponding tool needs to be installed on a
 ##     system.</code></pre>
-<pre><code>## ✓ Writing 'NAMESPACE'</code></pre>
-<pre><code>## ✓ Setting active project to '&lt;no active project&gt;'</code></pre>
-<pre><code>## [1] "/tmp/Rtmp8EfrIS/SPRtest"</code></pre>
+<pre><code>## ✔ Writing 'NAMESPACE'</code></pre>
+<pre><code>## ✔ Setting active project to '&lt;no active project&gt;'</code></pre>
+<pre><code>## ✔ Setting active project to '/tmp/Rtmp29LocL/SPRtest'</code></pre>
+<pre><code>## ✔ Adding 'testthat' to Suggests field in DESCRIPTION</code></pre>
+<pre><code>## ✔ Setting Config/testthat/edition field in DESCRIPTION to '3'</code></pre>
+<pre><code>## ✔ Creating 'tests/testthat/'</code></pre>
+<pre><code>## ✔ Writing 'tests/testthat.R'</code></pre>
+<pre><code>## ✔ Writing 'tests/testthat/test-SPRtest.R'</code></pre>
+<pre><code>## ● Edit 'tests/testthat/test-SPRtest.R'</code></pre>
+<pre><code>## [1] "/tmp/Rtmp29LocL/SPRtest"</code></pre>
 <pre>
 SPRtest/  
 ├── DESCRIPTION 
@@ -191,40 +198,45 @@ SPRtest/
 <a href="#create-the-webiste-for-the-package-with-pkgdown" class="anchor"></a>Create the webiste for the package with <code>pkgdown</code>
 </h2>
 <p>Edit the <code>_pkgdown.yml</code> file and run:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">pkgdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgdown.r-lib.org/reference/build_site.html">build_site</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="documentation-with-roxygen2" class="section level2">
 <h2 class="hasAnchor">
 <a href="#documentation-with-roxygen2" class="anchor"></a>Documentation with <code>roxygen2</code>
 </h2>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">roxygen2</span><span class="fu">::</span><span class="fu"><a href="https://roxygen2.r-lib.org/reference/roxygenize.html">roxygenise</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="testing-the-code-with-testthat" class="section level2">
 <h2 class="hasAnchor">
 <a href="#testing-the-code-with-testthat" class="anchor"></a>Testing the code with <code>testthat</code>
 </h2>
-<p>To create the infrastructure you need, run once:</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_r.html">use_test</a></span><span class="op">(</span><span class="st">"sprthis"</span><span class="op">)</span></code></pre></div>
 <p>To test the code, you can run</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/test.html">test</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
+</div>
+<div id="update-r-markdown-template-on-skeleton" class="section level1">
+<h1 class="hasAnchor">
+<a href="#update-r-markdown-template-on-skeleton" class="anchor"></a>Update R Markdown template on <code>skeleton</code>
+</h1>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="st">"vignettes/SPRtest.Rmd"</span><span class="op">)</span>
+<span class="fu"><a href="../reference/skeleton_update.html">skeleton_update</a></span><span class="op">(</span><span class="va">path</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="version-information" class="section level1">
 <h1 class="hasAnchor">
 <a href="#version-information" class="anchor"></a>Version Information</h1>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code>## R version 4.0.3 (2020-10-10)
+<pre><code>## R Under development (unstable) (2021-02-04 r79940)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 20.04.2 LTS
 ## 
 ## Matrix products: default
 ## BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
-## LAPACK: /home/dcassol/src/R-4.0.3/lib/libRlapack.so
+## LAPACK: /home/dcassol/src/R-devel/lib/libRlapack.so
 ## 
 ## locale:
 ##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
@@ -239,32 +251,35 @@ SPRtest/
 ## [6] methods   base     
 ## 
 ## other attached packages:
-## [1] SPRthis_0.99.0   BiocStyle_2.18.1
+## [1] SPRthis_0.99.1   BiocStyle_2.19.2
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_1.0.6           compiler_4.0.3      
-##  [3] pillar_1.4.7         formatR_1.7         
-##  [5] BiocManager_1.30.10  tools_4.0.3         
-##  [7] digest_0.6.27        evaluate_0.14       
-##  [9] memoise_2.0.0        lifecycle_1.0.0.9000
-## [11] tibble_3.0.6         pkgconfig_2.0.3     
-## [13] rlang_0.4.10         rstudioapi_0.13     
-## [15] cli_2.3.0            yaml_2.2.1          
-## [17] pkgdown_1.6.1        xfun_0.21           
-## [19] fastmap_1.1.0        withr_2.4.1         
-## [21] stringr_1.4.0        knitr_1.31          
-## [23] roxygen2_7.1.1       xml2_1.3.2          
-## [25] desc_1.2.0           fs_1.5.0            
-## [27] vctrs_0.3.6          systemfonts_1.0.1   
-## [29] rprojroot_2.0.2      glue_1.4.2          
-## [31] R6_2.5.0             textshaping_0.3.0   
-## [33] rmarkdown_2.6        bookdown_0.21       
-## [35] purrr_0.3.4          magrittr_2.0.1      
-## [37] codetools_0.2-18     htmltools_0.5.1.1   
-## [39] ellipsis_0.3.1       usethis_2.0.1       
-## [41] assertthat_0.2.1     ragg_0.4.1          
-## [43] stringi_1.5.3        cachem_1.0.3        
-## [45] crayon_1.4.1</code></pre>
+##  [1] Rcpp_1.0.6          bslib_0.2.4        
+##  [3] compiler_4.1.0      pillar_1.5.1       
+##  [5] BiocManager_1.30.12 formatR_1.8        
+##  [7] jquerylib_0.1.3     tools_4.1.0        
+##  [9] testthat_3.0.2      digest_0.6.27      
+## [11] jsonlite_1.7.2      evaluate_0.14      
+## [13] memoise_2.0.0       lifecycle_1.0.0    
+## [15] tibble_3.1.0        pkgconfig_2.0.3    
+## [17] rlang_0.4.10        rstudioapi_0.13    
+## [19] cli_2.4.0           yaml_2.2.1         
+## [21] pkgdown_1.6.1       xfun_0.22          
+## [23] fastmap_1.1.0       xml2_1.3.2         
+## [25] roxygen2_7.1.1      withr_2.4.1        
+## [27] stringr_1.4.0       knitr_1.31         
+## [29] desc_1.3.0          fs_1.5.0           
+## [31] sass_0.3.1          vctrs_0.3.7        
+## [33] systemfonts_1.0.1   rprojroot_2.0.2    
+## [35] glue_1.4.2          R6_2.5.0           
+## [37] textshaping_0.3.3   fansi_0.4.2        
+## [39] rmarkdown_2.7       bookdown_0.21      
+## [41] whisker_0.4         purrr_0.3.4        
+## [43] magrittr_2.0.1      codetools_0.2-18   
+## [45] htmltools_0.5.1.1   ellipsis_0.3.1     
+## [47] usethis_2.0.1       ragg_1.1.2         
+## [49] utf8_1.2.1          stringi_1.5.3      
+## [51] cachem_1.0.4        crayon_1.4.1</code></pre>
 </div>
 <div id="funding" class="section level1">
 <h1 class="hasAnchor">

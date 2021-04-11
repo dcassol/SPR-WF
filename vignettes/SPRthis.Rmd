@@ -103,18 +103,18 @@ roxygen2::roxygenise()
 
 ## Testing the code with `testthat`
 
-To create the infrastructure you need, run once:
-
-```{r, eval=FALSE}
-usethis::use_test("sprthis")
-```
-
 To test the code, you can run
 
 ```{r, eval=FALSE}
 devtools::test()
 ```
 
+# Update R Markdown template on `skeleton`
+
+```{r, eval=FALSE}
+path <- file.path("vignettes/SPRtest.Rmd")
+skeleton_update(path)
+```
 
 # Version Information
 

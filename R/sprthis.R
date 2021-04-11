@@ -129,13 +129,15 @@ writeLines(pkgdown, con = file.path(path, "_pkgdown.yml"))
 #' @importFrom crayon blue
 #' 
 #' @examples
+#' \dontrun{
 #' path <- file.path(tempdir(), "SPRtest", "vignettes/SPRtest.Rmd")
 #' skeleton_update(path)
+#' }
 skeleton_update <- function(rmd, templateName = NULL) {
   path <- normalizePath(rmd)
   dir <- sub("/([^/]*)$", "", sub("/([^/]*)$", "", rmd))
   if (is.null(templateName)) {
-    templateName <- systemPipeR:::.getFileName(rmd)
+    templateName <- .getFileName(rmd)
   } else {
     templateName <- templateName
   }
@@ -153,3 +155,15 @@ skeleton_update <- function(rmd, templateName = NULL) {
 ## Usage:
 # rmd <- "vignettes/SPvarseq.Rmd"
 # skeleton_update(rmd)
+
+#########################
+## .getFileName  ##
+#########################
+
+.getFileName <- function (x) {
+  if (!file.exists(x)) 
+    warning("No such file or directory. Check the file PATH.")
+  filename <- strsplit(basename(x), split = "\\.")[[1]]
+  filename <- filename[[-2]]
+  return(filename)
+}

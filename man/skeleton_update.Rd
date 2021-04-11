@@ -18,6 +18,8 @@ Path to the newly created/update Rmarkdown template.
 Copying vignette `.Rmd` as R Markdown document template
 }
 \examples{
+\dontrun{
 path <- file.path(tempdir(), "SPRtest", "vignettes/SPRtest.Rmd")
 skeleton_update(path)
+}
 }

@@ -1,12 +1,12 @@
 Package: SPRthis
 Title: Automate package and project setup for systemPipeR Workflow packages
-Version: 0.99.0
-Date: 2021-02-05
+Version: 0.99.1
+Date: 2021-04-10
 Authors@R: c(
     person(given = "Daniela", family = "Cassol", role = c("aut", "cre"), email="danicassol@gmail.com"))
 Description: This package expends usethis package, providing automation to create systemPipeR workflows templates.
 biocViews: Infrastructure
-Imports: yaml, usethis
+Imports: yaml, usethis, BiocManager, crayon
 Suggests: 
     BiocStyle,
     knitr,
