@@ -18,6 +18,7 @@
 #' @examples
 #' sprthis(wfName = "SPRtest", analysis = "SPRtest", path = tempdir())
 sprthis <- function(wfName = "SPRtest", analysis, path = tempdir(), baseurl="<baseurl>") {
+  getwd <- getwd()
   ## Create package
   fields <- list(
     Package = wfName, Title = wfName, Version = "0.9.0",
@@ -84,6 +85,10 @@ sprthis <- function(wfName = "SPRtest", analysis, path = tempdir(), baseurl="<ba
     system.file("github", "R_CMD.yml", package = "SPRthis", mustWork = TRUE),
     paste0(path, "/.github/workflows/R_CMD.yml")
   )
+  ##create the infrastructure you need for testing
+  setwd(path)
+  usethis::use_test(wfName)
+  setwd(getwd)
   ## WebPage
   pkgdown <- c(
   paste0("title: ", wfName),

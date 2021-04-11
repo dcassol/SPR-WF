@@ -18,7 +18,6 @@ Path to the newly created/update Rmarkdown template.
 Copying vignette `.Rmd` as R Markdown document template
 }
 \examples{
-sprthis(wfName = "SPRtest", analysis = "SPRtest", path = tempdir())
 path <- file.path(tempdir(), "SPRtest", "vignettes/SPRtest.Rmd")
 skeleton_update(path)
 }

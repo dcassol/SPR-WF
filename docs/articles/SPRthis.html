@@ -73,13 +73,13 @@
 
       
 
-      </header><script src="SPRthis_files/header-attrs-2.7/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>SPRthis</h1>
                         <h4 class="author">Author: Daniela Cassol (<a href="mailto:danicassol@gmail.com" class="email">danicassol@gmail.com</a>)</h4>
             
-            <h4 class="date">Last update: 22 March, 2021</h4>
+            <h4 class="date">Last update: 10 April, 2021</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/dcassol/SPRthis/blob/master/vignettes/SPRthis.Rmd"><code>vignettes/SPRthis.Rmd</code></a></small>
       <div class="hidden name"><code>SPRthis.Rmd</code></div>
@@ -190,18 +190,15 @@ SPRtest/
 <h2 class="hasAnchor">
 <a href="#create-the-webiste-for-the-package-with-pkgdown" class="anchor"></a>Create the webiste for the package with <code>pkgdown</code>
 </h2>
-<p>Run <em>once</em> to configure the package to use <code>pkgdown</code></p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_pkgdown.html">use_pkgdown</a></span><span class="op">(</span><span class="op">)</span>  <span class="co">## it will create _pkgdown.yml</span></code></pre></div>
 <p>Edit the <code>_pkgdown.yml</code> file and run:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">pkgdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgdown.r-lib.org/reference/build_site.html">build_site</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="documentation-with-roxygen2" class="section level2">
 <h2 class="hasAnchor">
 <a href="#documentation-with-roxygen2" class="anchor"></a>Documentation with <code>roxygen2</code>
 </h2>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">roxygen2</span><span class="fu">::</span><span class="fu"><a href="https://roxygen2.r-lib.org/reference/roxygenize.html">roxygenise</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="testing-the-code-with-testthat" class="section level2">
@@ -209,17 +206,17 @@ SPRtest/
 <a href="#testing-the-code-with-testthat" class="anchor"></a>Testing the code with <code>testthat</code>
 </h2>
 <p>To create the infrastructure you need, run once:</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/use_r.html">use_test</a></span><span class="op">(</span><span class="st">"sprthis"</span><span class="op">)</span></code></pre></div>
 <p>To test the code, you can run</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/test.html">test</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 <div id="version-information" class="section level1">
 <h1 class="hasAnchor">
 <a href="#version-information" class="anchor"></a>Version Information</h1>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## R version 4.0.3 (2020-10-10)
 ## Platform: x86_64-pc-linux-gnu (64-bit)

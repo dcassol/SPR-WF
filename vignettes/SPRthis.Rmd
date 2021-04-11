@@ -89,12 +89,6 @@ SPRtest/
 
 ## Create the webiste for the package with `pkgdown`
 
-Run *once* to configure the package to use `pkgdown`
-
-```{r, eval=FALSE}
-usethis::use_pkgdown() ## it will create _pkgdown.yml
-```
-
 Edit the `_pkgdown.yml` file and run:
 
 ```{r, eval=FALSE}
