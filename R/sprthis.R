@@ -49,7 +49,7 @@ sprthis <- function(wfName = "SPRtest", analysis, path = tempdir(), baseurl="<ba
   dir.create(path_temp, recursive = TRUE)
   ## template.yaml
   template <- list(name = wfName, description = wfName, create_dir = TRUE)
-  yaml::write_yaml(x = template, file = file.path(path_temp, "template.yml"))
+  yaml::write_yaml(x = template, file = file.path(path_temp, "template.yaml"))
   # directory structure
   file.copy(system.file("extdata", "", package = "SPRthis", mustWork = TRUE), path_temp, recursive = TRUE)
   file.rename(paste0(path_temp, "/extdata"), paste0(path_temp, "/skeleton"))
