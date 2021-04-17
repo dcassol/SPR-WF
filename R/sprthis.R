@@ -141,7 +141,7 @@ skeleton_update <- function(rmd, templateName = NULL) {
   } else {
     templateName <- templateName
   }
-  to <- file.path(paste0(dir, "/inst/rmarkdown/templates/", templateName, "/skeleton"))
+  to <- file.path(paste0("inst/rmarkdown/templates/", templateName, "/skeleton"))
   if (!dir.exists(to)) stop("R Markdown document infrastructure doesn't exist.")
   newRmd <- file.path(to, "skeleton.Rmd")
   if (file.exists(newRmd)) {
