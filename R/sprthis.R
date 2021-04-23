@@ -21,7 +21,7 @@ sprthis <- function(wfName = "SPRtest", analysis, path = tempdir(), baseurl="<ba
   getwd <- getwd()
   ## Create package
   fields <- list(
-    Package = wfName, Title = wfName, Version = "0.9.0",
+    Package = wfName, Title = wfName, Version = "0.99.0",
     Description = paste0("This package provides a pre-configured workflow and reporting template for ", analysis, "."),
     biocViews = "Infrastructure, ...", Imports = "systemPipeR (>= 1.25.0)",
     Suggests = "BiocStyle, knitr, rmarkdown",
