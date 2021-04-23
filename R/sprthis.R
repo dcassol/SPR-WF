@@ -43,7 +43,7 @@ sprthis <- function(wfName = "SPRtest", analysis, path = tempdir(), baseurl="<ba
     "vignettes/*.html"), con = file.path(path, ".gitignore"))
   ## R folder not empty
   writeLines(c(
-    "Write functions here"), con = file.path(path, "R/dummyfunction.R"))
+    "## Write functions here"), con = file.path(path, "R/dummyfunction.R"))
   ## skeleton
   path_temp <- file.path(path, "inst/rmarkdown/templates", wfName)
   dir.create(path_temp, recursive = TRUE)
