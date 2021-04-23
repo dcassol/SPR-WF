@@ -148,7 +148,7 @@ please follow:
 A collection of workflow templates are available, and it is possible to browse the 
 current availability, as follows:
 
-```{r eval=TRUE, tidy=FALSE}
+```{r eval=FALSE, tidy=FALSE}
 systemPipeRdata::availableWF(github = TRUE)
 ```
 
